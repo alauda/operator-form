@@ -1,0 +1,455 @@
+specDescriptors:
+  - description: application version
+    displayName: Version
+    path: application.version
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:com.tectonic.default:0.0.1
+  - description: The desired testBoolean.
+    displayName: application TestBoolean
+    path: application.testBoolean
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - urn:alm:descriptor:com.tectonic.default:true
+      - 'urn:alm:descriptor:label:en:Ingress Enabled'
+      - 'urn:alm:descriptor:label:zh:Ingress 开启'
+      - 'urn:alm:descriptor:description:en:Ingress enabled switch'
+      - 'urn:alm:descriptor:description:zh:Ingress 是否开启'
+  #  deploy1
+  - path: 'deploy'
+    displayName: '部署'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+  - description: '计算组件名称'
+    displayName: 部署
+    path: deploy.name
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:description:en:Name'
+      - 'urn:alm:descriptor:description:zh:计算组件名称'
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:部署'
+      - urn:alm:descriptor:com.tectonic.default:deploy
+  - path: 'deploy.containers1'
+    displayName: '容器1'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      # - 'urn:alm:descriptor:com.tectonic.ui:hidden'
+  - path: 'deploy.containers2'
+    displayName: '容器2'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+  - path: 'deploy.containers1.image'
+    displayName: Image
+    description: 'deploy计算组件镜像'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers1'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.default:xxxxx
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:镜像'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'deploy.containers1.address'
+    displayName: Address
+    description: '容器1的地址'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers1'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.default:xxxxx
+      - 'urn:alm:descriptor:label:en:Address'
+      - 'urn:alm:descriptor:label:zh:地址'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'deploy.containers2.image'
+    displayName: Image
+    description: 'deploy计算组件镜像'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.default:xxxxx
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:镜像'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'deploy.containers2.setting'
+    displayName: '容器2镜像的设置'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+  - path: 'deploy.containers2.setting.key'
+    displayName: '容器2镜像设置的的key'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2.setting'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - path: 'deploy.containers2.info'
+    x-descriptors:
+      - 'urn:alm:descriptor:label:zh:信息'
+      - 'urn:alm:descriptor:label:en:Info'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+  - path: 'deploy.containers2.info[0].name'
+    displayName: Name
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info'
+      - 'urn:alm:descriptor:com.tectonic.ui:textarea'
+      - urn:alm:descriptor:com.tectonic.default:testName
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:名称'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'deploy.containers2.info[0].value'
+    displayName: Value
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:label:en:Value'
+      - 'urn:alm:descriptor:label:zh:值'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'deploy.containers2.info[0].labels'
+    displayName: labels
+    description: 'Test info array labels'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+  - path: 'deploy.containers2.info[0].labels.key'
+    displayName: labels key
+    description: 'Test info array labels'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2.info[0].labels'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - path: 'deploy.containers2.info[0].labels.value'
+    displayName: labels value
+    description: 'Test info array labels'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:deploy.containers2.info[0].labels'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - path: 'deploy.containers2.info[0].labels.envs'
+    x-descriptors:
+      - 'urn:alm:descriptor:label:zh:环境配置'
+      - 'urn:alm:descriptor:label:en:ENVS'
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+  - path: 'deploy.containers2.info[0].labels.envs[0].key'
+    displayName: Labels的环境变量
+    description: 'Test envs key'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info[0].labels.envs'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - path: 'deploy.containers2.info[0].labels.envs[0].address'
+    displayName: Labels的环境变量地址
+    description: 'Test envs address'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:deploy.containers2.info[0].labels.envs'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - path: 'info'
+    x-descriptors:
+      - 'urn:alm:descriptor:label:zh:信息'
+      - 'urn:alm:descriptor:label:en:Info'
+  - path: 'info[0].name'
+    displayName: Name
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
+      - 'urn:alm:descriptor:com.tectonic.ui:textarea'
+      - urn:alm:descriptor:com.tectonic.default:testName
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:名称'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'info[0].value'
+    displayName: Value
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:label:en:Value'
+      - 'urn:alm:descriptor:label:zh:值'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+# specDescriptors:
+#   - description: '计算组件名称'
+#     displayName: test1
+#     path: test1.name
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:Name'
+#       - 'urn:alm:descriptor:description:zh:名称'
+#       - 'urn:alm:descriptor:label:en:Name'
+#       - 'urn:alm:descriptor:label:zh:名称'
+#       - urn:alm:descriptor:com.tectonic.default:test1
+#   - path: 'test1.containers0'
+#     displayName: '容器1'
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:object'
+#   - description: 'test1计算组件镜像'
+#     displayName: Image
+#     path: test1.containers0.image
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:Image'
+#       - 'urn:alm:descriptor:description:zh:计算组件镜像'
+#       - 'urn:alm:descriptor:label:en:Image'
+#       - 'urn:alm:descriptor:label:zh:镜像'
+#       - urn:alm:descriptor:com.tectonic.default:nginx
+#   - description: ''
+#     displayName: FOOBAR
+#     path: test1.containers0.FOOBAR
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:select:FOOBAR1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:select:FOOBAR2'
+#       - 'urn:alm:descriptor:description:en:FOOBAR'
+#       - 'urn:alm:descriptor:label:zh:FOOBAR'
+#       - urn:alm:descriptor:com.tectonic.default:test
+#   - description: ''
+#     displayName: ALAUDA
+#     path: test1.containers0.ALAUDA
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:ALAUDA'
+#       - 'urn:alm:descriptor:label:zh:ALAUDA'
+#       - urn:alm:descriptor:com.tectonic.default:alauda
+#   - description: ''
+#     path: test1.containers0.vol1
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol1
+#   - description: ''
+#     path: test1.containers0.vol1.PVC
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:PVC'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:PVC
+#   - description: ''
+#     path: test1.containers0.vol1.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test1.containers0.vol2
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol2
+#   - description: ''
+#     path: test1.containers0.vol2.EmptyDir
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:EmptyDir'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:EmptyDir
+#   - description: ''
+#     path: test1.containers0.vol2.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test1.containers0.vol2.subPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载子路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test/cache
+#   - path: 'test1.containers1'
+#     displayName: '容器2'
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:object'
+#   - description: 'test1计算组件镜像'
+#     displayName: Image
+#     path: test1.containers1.image
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:Image'
+#       - 'urn:alm:descriptor:description:zh:计算组件镜像'
+#       - 'urn:alm:descriptor:label:en:Image'
+#       - 'urn:alm:descriptor:label:zh:镜像'
+#       - urn:alm:descriptor:com.tectonic.default:nginx
+#   - description: ''
+#     displayName: FOOBAR
+#     path: test1.containers1.FOOBAR
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:select:FOOBAR1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:select:FOOBAR2'
+#       - 'urn:alm:descriptor:description:en:FOOBAR'
+#       - 'urn:alm:descriptor:label:zh:FOOBAR'
+#       - urn:alm:descriptor:com.tectonic.default:test
+#   - description: ''
+#     displayName: ALAUDA
+#     path: test1.containers1.ALAUDA
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:ALAUDA'
+#       - 'urn:alm:descriptor:label:zh:ALAUDA'
+#       - urn:alm:descriptor:com.tectonic.default:alauda
+#   - description: ''
+#     path: test1.containers1.vol1
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol1
+#   - description: ''
+#     path: test1.containers1.vol1.PVC
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:PVC'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:PVC
+#   - description: ''
+#     path: test1.containers1.vol1.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test1.containers1.vol2
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol2
+#   - description: ''
+#     path: test1.containers1.vol2.EmptyDir
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:EmptyDir'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:EmptyDir
+#   - description: ''
+#     path: test1.containers1.vol2.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test1.containers1.vol2.subPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test1.containers1'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载子路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test/cache
+#   - description: '计算组件名称'
+#     displayName: test2
+#     path: test2.name
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:Name'
+#       - 'urn:alm:descriptor:description:zh:名称'
+#       - 'urn:alm:descriptor:label:en:Name'
+#       - 'urn:alm:descriptor:label:zh:名称'
+#       - urn:alm:descriptor:com.tectonic.default:test2
+#   - path: 'test2.containers0'
+#     displayName: '容器1'
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2'
+#       - 'urn:alm:descriptor:com.tectonic.ui:object'
+#   - description: 'test2计算组件镜像'
+#     displayName: Image
+#     path: test2.containers0.image
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:Image'
+#       - 'urn:alm:descriptor:description:zh:计算组件镜像'
+#       - 'urn:alm:descriptor:label:en:Image'
+#       - 'urn:alm:descriptor:label:zh:镜像'
+#       - urn:alm:descriptor:com.tectonic.default:nginx
+#   - description: ''
+#     displayName: FOOBAR
+#     path: test2.containers0.FOOBAR
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:FOOBAR'
+#       - 'urn:alm:descriptor:label:zh:FOOBAR'
+#       - urn:alm:descriptor:com.tectonic.default:test
+#   - description: ''
+#     displayName: ALAUDA
+#     path: test2.containers0.ALAUDA
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:ALAUDA'
+#       - 'urn:alm:descriptor:label:zh:ALAUDA'
+#       - urn:alm:descriptor:com.tectonic.default:alauda
+#   - description: ''
+#     path: test2.containers0.vol1
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol1
+#   - description: ''
+#     path: test2.containers0.vol1.PVC
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:PVC'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:PVC
+#   - description: ''
+#     path: test2.containers0.vol1.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test2.containers0.vol2
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - urn:alm:descriptor:com.tectonic.ui:text
+#       - 'urn:alm:descriptor:label:zh:存储卷名称'
+#       - urn:alm:descriptor:com.tectonic.default:vol2
+#   - description: ''
+#     path: test2.containers0.vol2.EmptyDir
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:description:en:EmptyDir'
+#       - 'urn:alm:descriptor:label:zh:存储卷类型'
+#       - urn:alm:descriptor:com.tectonic.default:EmptyDir
+#   - description: ''
+#     path: test2.containers0.vol2.mountPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test
+#   - description: ''
+#     path: test2.containers0.vol2.subPath
+#     x-descriptors:
+#       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:test2.containers0'
+#       - 'urn:alm:descriptor:com.tectonic.ui:text'
+#       - 'urn:alm:descriptor:label:zh:存储卷挂载子路径'
+#       - urn:alm:descriptor:com.tectonic.default:/test/cache

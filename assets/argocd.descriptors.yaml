@@ -1,0 +1,357 @@
+specDescriptors:
+  - description: 'The container image to use for the Argo CD components.'
+    displayName: Image
+    path: image
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:ArgoCD'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:description:en:The container image to use for the Argo CD components.'
+      - 'urn:alm:descriptor:description:zh:ArgoCD 组件的镜像'
+      - 'urn:alm:descriptor:label:en:Image'
+      - 'urn:alm:descriptor:label:zh:镜像'
+  - description: 'The container image tag (version) to use for the Argo CD components.'
+    displayName: Version
+    path: version
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:ArgoCD'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:description:en:The container image tag (version) to use for the Argo CD components.'
+      - 'urn:alm:descriptor:description:zh:ArgoCD 组件的镜像版本'
+      - 'urn:alm:descriptor:label:en:Version'
+      - 'urn:alm:descriptor:label:zh:版本'
+  - description: 'Selected'
+    displayName: 'redis switch'
+    path: redis.switch
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Redis'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The container image name to use for Redis.'
+    displayName: Image
+    path: redis.image
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Redis'
+
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The limits and requests requirements for the Redis container.'
+    displayName: 'Resource Requirements'
+    path: redis.resources
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Redis'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:redis.switch:true
+      - 'urn:alm:descriptor:com.tectonic.ui:resourceRequirements'
+  - description: 'The container image tag (version) to use for Redis.'
+    displayName: Version
+    path: redis.version
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Redis'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The number of operation processors for the Argo CD Application Controller.'
+    displayName: 'Operation Processor Count'
+    path: controller.processors.operation
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Controller'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+  - description: 'The number of status processors for the Argo CD Application Controller.'
+    displayName: 'Status Processor Count'
+    path: controller.processors.status
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Controller'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+  - description: 'The container image tag (version) to use for Dex.'
+    displayName: Version
+    path: dex.version
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Dex'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The Dex connector configuration.'
+    displayName: Configuration
+    path: dex.config
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Dex'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:foo'
+  - description: 'The container image name to use for Dex.'
+    displayName: Image
+    path: dex.image
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Dex'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:description:en:The container image name to use for Dex.'
+      - 'urn:alm:descriptor:description:zh:Dex 用到的容器镜像。'
+      - 'urn:alm:descriptor:label:en:Image'
+      - 'urn:alm:descriptor:label:zh:镜像'
+  - description: 'Selected if OpenShift OAuth should be automatically configured by the operator.'
+    displayName: 'OpenShift OAuth Enabled'
+    path: dex.openShiftOAuth
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Dex'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:true'
+  - description: 'The limits and requests requirements for the Dex container.'
+    displayName: 'Resource Requirements'
+    path: dex.resources
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Dex'
+      - 'urn:alm:descriptor:com.tectonic.ui:resourceRequirements'
+  - description: 'Selected if Grafana resources should created.'
+    displayName: Enabled
+    path: grafana.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The container image tag (version) to use for Grafana.'
+    displayName: Version
+    path: grafana.version
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'The hostname to use for access to Grafana.'
+    displayName: Host
+    path: grafana.host
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'The container image name to use for Grafana.'
+    displayName: Image
+    path: grafana.image
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'Selected if a Grafana Ingress resource should be created.'
+    displayName: 'Ingress Enabled'
+    path: grafana.ingress
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'Selected if a Grafana Route resource should be created.'
+    displayName: 'Route Enabled'
+    path: grafana.route
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'The replica count for the Grafana Deployment.'
+    displayName: Size
+    path: grafana.size
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Grafana'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:grafana.enabled:true
+  - description: 'Selected if Argo CD high-availability mode should be enabled.'
+    displayName: Enabled
+    path: ha.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:HA'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The name of an ArgoCDExport from which to import initial data.'
+    displayName: Name
+    path: import.name
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Import'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'Namespace for the ArgoCDExport, defaults to the same namespace as the ArgoCD.'
+    displayName: Namespace
+    path: import.namespace
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Import'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The path used for the Ingress resource.'
+    displayName: Path
+    path: ingress.path
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Ingress'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'Selected if Prometheus resources should be created.'
+    displayName: Enabled
+    path: prometheus.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Prometheus'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The hostname to use for access to Prometheus.'
+    displayName: Host
+    path: prometheus.host
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Prometheus'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'Selected if a Prometheus Ingress resource should be created.'
+    displayName: 'Ingress Enabled'
+    path: prometheus.ingress
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Prometheus'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'Selected if a Prometheus Route resource should be created.'
+    displayName: 'Route Enabled'
+    path: prometheus.route
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Prometheus'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The replica count for the Prometheus Deployment.'
+    displayName: Size
+    path: prometheus.size
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Prometheus'
+      - 'urn:alm:descriptor:com.tectonic.ui:podCount'
+  - description: 'The default role which Argo CD will fall back to when authorizing API requests.'
+    displayName: 'Default Policy'
+    path: rbac.defaultPolicy
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:RBAC'
+      - urn:alm:descriptor:com.tectonic.ui:select:admin
+      - urn:alm:descriptor:com.tectonic.ui:select:cluster-admin
+      - urn:alm:descriptor:com.tectonic.ui:select:edit
+      - urn:alm:descriptor:com.tectonic.ui:select:view
+  - description: 'The user-defined RBAC policies and role definitions in CSV format.'
+    displayName: Policy
+    path: rbac.policy
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:RBAC'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The OIDC scopes to examine during RBAC enforcement.'
+    displayName: Scopes
+    path: rbac.scopes
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:RBAC'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+
+  - description: 'The limits and requests requirements for the Argo CD repo container.'
+    displayName: 'Resource Requirements'
+    path: repo.resources
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Repo'
+      - 'urn:alm:descriptor:com.tectonic.ui:resourceRequirements'
+  - description: 'Selected if autoscaling should be enabled for the Argo CD server.'
+    displayName: 'Autoscale Enabled'
+    path: server.autoscale.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The hostname to use for the GRPC Ingress/Route resource.'
+    displayName: GRPC Host
+    path: server.grpc.host
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'Selected if a GRPC Ingress resource should be created.'
+    displayName: 'GRPC Ingress Enabled'
+    path: server.grpc.ingress
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The hostname to use for Ingress/Route resources.'
+    displayName: Host
+    path: server.host
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'Selected if an Ingress resource should be created.'
+    displayName: 'Ingress Enabled'
+    path: server.ingress
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'Selected if the Argo CD server should be run without TLS.'
+    displayName: Insecure
+    path: server.insecure
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'Selected if a Route resource should be created.'
+    displayName: 'Route Enabled'
+    path: server.route
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+  - description: 'The ServiceType to use for the Argo CD server Service resource.'
+    displayName: 'Service Type'
+    path: server.service.type
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Server'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+  - description: 'The metadata.label key name where Argo CD injects the app name as a tracking label.'
+    displayName: 'Application Instance Label Key'
+    path: applicationInstanceLabelKey
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Additional config management plugins.'
+    displayName: 'Config Management Plugins'
+    path: configManagementPlugins
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The Google Analytics tracking ID to use for Argo CD.'
+    displayName: 'Google Analytics Tracking ID'
+    path: gaTrackingID
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Selected if user IDs should be hashed before sending to Google Analytics.'
+    displayName: 'Google Analytics Anonymize Users'
+    path: gaAnonymizeUsers
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The URL for getting chat help.'
+    displayName: 'Help Chat URL'
+    path: helpChatURL
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The text to use for getting chat help.'
+    displayName: 'Help Chat Text'
+    path: helpChatText
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The initial repositories to configure Argo CD to use for projects.'
+    displayName: 'Initial Repositories'
+    path: initialRepositories
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The initial SSH known hosts data for connecting Git repositories via SSH.'
+    displayName: 'Initial SSH Known Hosts'
+    path: initialSSHKnownHosts
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The build options/parameters to use with `kustomize build`.'
+    displayName: 'Kustomize Build Options'
+    path: kustomizeBuildOptions
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'The OIDC configuration as an alternative to Dex.'
+    displayName: 'OIDC Config'
+    path: oidcConfig
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Customizes resource behavior. Keys are in the form of group/Kind.'
+    displayName: 'Resource Customizations'
+    path: resourceCustomizations
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Completely ignore entire classes of resource group/kinds.'
+    displayName: 'Resource Exclusions'
+    path: resourceExclusions
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Selected if the application status badge feature should be enabled.'
+    displayName: 'Status Badge Enabled'
+    path: statusBadgeEnabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'
+  - description: 'Selected if anonymous user access should be enabled.'
+    displayName: 'Anonymous Users Enabled'
+    path: usersAnonymousEnabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.ui:advanced'

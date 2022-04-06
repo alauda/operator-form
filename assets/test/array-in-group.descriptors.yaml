@@ -1,0 +1,59 @@
+specDescriptors:
+  - path: group1
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - urn:alm:descriptor:label:zh:group1/zh
+  - path: group1.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group1'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group1.a/zh'
+  - path: group1.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group1.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group1.a.a/zh'
+  - path: group1.a.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group1.a.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group1.a.a.a/zh'
+  - path: group1.a.a.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group1.a.a.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+      - 'urn:alm:descriptor:label:zh:array.a.a.a.a/zh'
+  - path: group1.a.a.a.a[0].arr_a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:group1.a.a.a.a'
+      - 'urn:alm:descriptor:label:zh:arr_a'
+  - path: group2
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - urn:alm:descriptor:label:zh:group2/zh
+  - path: group2.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group2'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group2.a/zh'
+  - path: group2.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group2.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group2.a.a/zh'
+  - path: group2.a.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group2.a.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:object'
+      - 'urn:alm:descriptor:label:zh:group2.a.a.a/zh'
+  - path: group2.a.a.a.a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:group2.a.a.a'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+      - 'urn:alm:descriptor:label:zh:array.a.a.a.a/zh'
+  - path: group2.a.a.a.a[0].arr_a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:group2.a.a.a.a'
+      - 'urn:alm:descriptor:label:zh:arr_a'

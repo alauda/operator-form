@@ -1,0 +1,15 @@
+specDescriptors:
+  - path: arr1
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+      - urn:alm:descriptor:label:zh:arr1/zh
+  - path: arr1[0].arr_arr1
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:arr1'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+      - 'urn:alm:descriptor:label:zh:arr_arr1/zh'
+  - path: arr1[0].arr_arr1[0].a
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:arr1[0].arr_arr1'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:label:zh:arr_arr1.a/zh'

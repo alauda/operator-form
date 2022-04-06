@@ -1,0 +1,47 @@
+{
+  'spec':
+    {
+      'deploy':
+        {
+          'containers2':
+            {
+              'info':
+                [
+                  {
+                    'name': '5',
+                    'value': '6',
+                    'labels':
+                      {
+                        'envs':
+                          [
+                            { 'key': '11', 'address': '12' },
+                            { 'key': '13', 'address': '14' },
+                          ],
+                        'key': '9',
+                        'value': '10',
+                      },
+                  },
+                  {
+                    'name': '15',
+                    'value': '16',
+                    'labels':
+                      {
+                        'key': '19',
+                        'envs':
+                          [
+                            { 'key': '21', 'address': '22' },
+                            { 'key': '23', 'address': '24' },
+                            { 'key': '25', 'address': '26' },
+                          ],
+                        'value': '20',
+                      },
+                  },
+                ],
+              'image': '3',
+              'setting': { 'key': '4' },
+            },
+          'containers1': { 'image': '1', 'address': '2' },
+        },
+      'info': [{ 'name': 'info1' }, { 'name': 'info2' }, { 'name': 'info3' }],
+    },
+}

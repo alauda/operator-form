@@ -1,0 +1,14 @@
+spec:
+  group1:
+    a:
+      a:
+        a:
+          a:
+            - arr_a: '11'
+              arr_b: '22'
+              group1:
+                a: '33'
+            - arr_a: '111'
+              arr_b: '222'
+              group1:
+                a: '333'

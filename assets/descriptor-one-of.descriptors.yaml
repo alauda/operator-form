@@ -1,0 +1,108 @@
+specDescriptors:
+  - path: persistence.type
+    displayName: type
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:select:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:select:PVC
+      - urn:alm:descriptor:oneOf:LocalPath:persistence.location:persistence.location2
+      - urn:alm:descriptor:oneOf:PVC:persistence.pvc
+
+  - path: persistence.location.nodeName
+    displayName: Node Name
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Node Name
+      - urn:alm:descriptor:label:zh:Node Name
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.location.path
+    displayName: Path
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Path
+      - urn:alm:descriptor:label:zh:Path
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.location2.nodeName
+    displayName: Node Name2
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Node Name2
+      - urn:alm:descriptor:label:zh:Node Name2
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.location2.path
+    displayName: Path2
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Path2
+      - urn:alm:descriptor:label:zh:Path2
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.pvc.existingClaim
+    displayName: Existing Claim
+    description: Type为“PVC”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:PVC
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Existing Claim
+      - urn:alm:descriptor:label:zh:Existing Claim
+      - urn:alm:descriptor:description:en:Type为“PVC”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“PVC”时，必须填写
+  - path: persistence.test.nodeName
+    displayName: 非必填
+    description: 非必填
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:text
+
+  - path: persistence1.type
+    displayName: type
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence1
+      - urn:alm:descriptor:com.tectonic.ui:booleanSwitch
+      - urn:alm:descriptor:oneOf:true:persistence1.location
+  - path: persistence1.location.nodeName
+    displayName: Node Name
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence1
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence1.type:true
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Node Name
+      - urn:alm:descriptor:label:zh:Node Name
+
+  - path: persistence2.type
+    displayName: type
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence2
+      - urn:alm:descriptor:com.tectonic.ui:number
+      - urn:alm:descriptor:oneOf:2:persistence2.location
+  - path: persistence2.location.nodeName
+    displayName: Node Name
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence2
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Node Name
+      - urn:alm:descriptor:label:zh:Node Name
+  - path: persistence2.base.name
+    displayName: 非必填
+    description: 非必填
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence1
+      - urn:alm:descriptor:com.tectonic.ui:text
