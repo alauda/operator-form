@@ -1,0 +1,178 @@
+name: giteas.operator.devops.alauda.io
+version: v1alpha1
+kind: Gitea
+displayName: gitea
+description: Gitea 是一个轻量级代码托管解决方案，它可以运行在任何 Go 能够编译的平台。
+specDescriptors:
+  - path: account.password
+    displayName: Password
+    description:
+      Gitea 管理员用户名为：gitea_admin。 密码必须包含至少一个大写英文字母、小写英文字母、数字、特殊符号(注：不支持 &
+      符号)，且仅在初始安装时支持修改密码。
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:account
+      - urn:alm:descriptor:com.tectonic.ui:password:confirm
+      - urn:alm:descriptor:password:encoding:base64
+      - urn:alm:descriptor:com.tectonic.ui:validation:required
+      - urn:alm:descriptor:label:en:Password
+      - urn:alm:descriptor:label:zh:Password
+      - urn:alm:descriptor:description:en:Gitea 管理员用户名为：gitea_admin。 密码必须包含至少一个大写英文字母、小写英文字母、数字、特殊符号(注：不支持 & 符号)，且仅在初始安装时支持修改密码。
+      - urn:alm:descriptor:description:zh:Gitea 管理员用户名为：gitea_admin。 密码必须包含至少一个大写英文字母、小写英文字母、数字、特殊符号(注：不支持 & 符号)，且仅在初始安装时支持修改密码。
+  - path: account.passwordRef
+    displayName: Password Ref
+    description: PasswordRef is password secret reference.
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:hidden
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:account
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Password Ref
+      - urn:alm:descriptor:label:zh:Password Ref
+      - urn:alm:descriptor:description:en:PasswordRef is password secret reference.
+      - urn:alm:descriptor:description:zh:PasswordRef is password secret reference.
+  - path: integratedIntoPlatform
+    displayName: Integrated Into Platform
+    description: 开启时创建的工具实例会自动绑定到DevOps的工具链中（绑定动作会有最长10分钟的延迟）
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:hidden
+      - urn:alm:descriptor:com.tectonic.ui:booleanSwitch
+      - urn:alm:descriptor:label:en:Integrated Into Platform
+      - urn:alm:descriptor:label:zh:Integrated Into Platform
+      - urn:alm:descriptor:description:en:开启时创建的工具实例会自动绑定到DevOps的工具链中（绑定动作会有最长10分钟的延迟）
+      - urn:alm:descriptor:description:zh:开启时创建的工具实例会自动绑定到DevOps的工具链中（绑定动作会有最长10分钟的延迟）
+  - path: persistence.type
+    displayName: Type
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:select:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:select:PVC
+      - urn:alm:descriptor:oneOf:LocalPath:persistence.location
+      - urn:alm:descriptor:oneOf:PVC:persistence.pvc
+      - urn:alm:descriptor:label:en:Type
+      - urn:alm:descriptor:label:zh:Type
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: persistence.location.nodeName
+    displayName: Node Name
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Node Name
+      - urn:alm:descriptor:label:zh:Node Name
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.location.path
+    displayName: Path
+    description: Type为“LocalPath”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:LocalPath
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Path
+      - urn:alm:descriptor:label:zh:Path
+      - urn:alm:descriptor:description:en:Type为“LocalPath”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“LocalPath”时，必须填写
+  - path: persistence.pvc.existingClaim
+    displayName: Existing Claim
+    description: Type为“PVC”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:persistence
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.type:PVC
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Existing Claim
+      - urn:alm:descriptor:label:zh:Existing Claim
+      - urn:alm:descriptor:description:en:Type为“PVC”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“PVC”时，必须填写
+  - path: service.type
+    displayName: Type
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:select:NodePort
+      - urn:alm:descriptor:com.tectonic.ui:select:Ingress
+      - urn:alm:descriptor:oneOf:NodePort:service.nodePort
+      - urn:alm:descriptor:oneOf:Ingress:service.ingress
+      - urn:alm:descriptor:label:en:Type
+      - urn:alm:descriptor:label:zh:Type
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: service.ingress.domainName
+    displayName: Domain Name
+    description: Type为“Ingress”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:Ingress
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Domain Name
+      - urn:alm:descriptor:label:zh:Domain Name
+      - urn:alm:descriptor:description:en:Type为“Ingress”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“Ingress”时，必须填写
+  - path: service.ingress.protocol
+    displayName: Protocol
+    description: 协议类型
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:Ingress
+      - urn:alm:descriptor:com.tectonic.ui:select:HTTP
+      - urn:alm:descriptor:com.tectonic.ui:select:HTTPS
+      - urn:alm:descriptor:label:en:Protocol
+      - urn:alm:descriptor:label:zh:Protocol
+      - urn:alm:descriptor:description:en:协议类型
+      - urn:alm:descriptor:description:zh:协议类型
+  - path: service.ingress.secretName
+    displayName: Secret Name
+    description: 证书名称，使用HTTPS时必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:Ingress
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:Secret Name
+      - urn:alm:descriptor:label:zh:Secret Name
+      - urn:alm:descriptor:description:en:证书名称，使用HTTPS时必须填写
+      - urn:alm:descriptor:description:zh:证书名称，使用HTTPS时必须填写
+  - path: service.nodePort.httpPort
+    displayName: Http Port
+    description: Type为“NodePort”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:NodePort
+      - urn:alm:descriptor:com.tectonic.ui:number
+      - urn:alm:descriptor:label:en:Http Port
+      - urn:alm:descriptor:label:zh:Http Port
+      - urn:alm:descriptor:description:en:Type为“NodePort”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“NodePort”时，必须填写
+  - path: service.nodePort.httpsPort
+    displayName: Https Port
+    description: Type为“NodePort”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:NodePort
+      - urn:alm:descriptor:com.tectonic.ui:number
+      - urn:alm:descriptor:label:en:Https Port
+      - urn:alm:descriptor:label:zh:Https Port
+      - urn:alm:descriptor:description:en:Type为“NodePort”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“NodePort”时，必须填写
+  - path: service.nodePort.sshPort
+    displayName: Ssh Port
+    description: Type为“NodePort”时，必须填写
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:service
+      - urn:alm:descriptor:com.tectonic.ui:fieldDependency:service.type:NodePort
+      - urn:alm:descriptor:com.tectonic.ui:number
+      - urn:alm:descriptor:label:en:Ssh Port
+      - urn:alm:descriptor:label:zh:Ssh Port
+      - urn:alm:descriptor:description:en:Type为“NodePort”时，必须填写
+      - urn:alm:descriptor:description:zh:Type为“NodePort”时，必须填写
+  - path: externalURL
+    displayName: External URL
+    description:
+      请输入服务的访问地址 Service的Type为“NodePort”时，请输入http://IP:端口，且该“端口”必须与Service的Node
+      Port一致 Service的Type为“Ingress”时，请输入对应访问地址，例如：http://kubernetes.io。
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:text
+      - urn:alm:descriptor:label:en:External URL
+      - urn:alm:descriptor:label:zh:External URL
+      - urn:alm:descriptor:description:en:请输入服务的访问地址 Service的Type为“NodePort”时，请输入http://IP:端口，且该“端口”必须与Service的Node
+        Port一致 Service的Type为“Ingress”时，请输入对应访问地址，例如：http://kubernetes.io。
+      - urn:alm:descriptor:description:zh:请输入服务的访问地址 Service的Type为“NodePort”时，请输入http://IP:端口，且该“端口”必须与Service的Node
+        Port一致 Service的Type为“Ingress”时，请输入对应访问地址，例如：http://kubernetes.io。

@@ -1,0 +1,281 @@
+specDescriptors:
+  - path: global.labelBaseDomain
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:cpaas.io'
+      - 'urn:alm:descriptor:label:en:BaseDomain'
+      - 'urn:alm:descriptor:label:zh:BaseDomain'
+      - 'urn:alm:descriptor:description:en:Global labelBaseDomain'
+      - 'urn:alm:descriptor:description:zh:Global labelBaseDomain'
+  - path: global.devops.credentials.namespace
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:cpaas-system-global-credentials'
+      - 'urn:alm:descriptor:label:en:DevOps credentials namespace'
+      - 'urn:alm:descriptor:label:zh:DevOps credentials namespace'
+      - 'urn:alm:descriptor:description:en:DevOps credentials namespace'
+      - 'urn:alm:descriptor:description:zh:DevOps credentials namespace'
+  - path: global.registry.address
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:new-int.alauda.cn:11443'
+      - 'urn:alm:descriptor:label:en:Image Registry Address'
+      - 'urn:alm:descriptor:label:zh:镜像仓库地址'
+      - 'urn:alm:descriptor:description:en:Image registry address'
+      - 'urn:alm:descriptor:description:zh:镜像仓库地址'
+  - path: global.images.pruner.repository
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:3rdparty/docker-registry-pruner'
+      - 'urn:alm:descriptor:label:en:Pruner Image Repository'
+      - 'urn:alm:descriptor:label:zh:Pruner 镜像名称'
+      - 'urn:alm:descriptor:description:en:Pruner image repository'
+      - 'urn:alm:descriptor:description:zh:Pruner 镜像名称'
+  - path: global.images.pruner.tag
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:v3.8.0'
+      - 'urn:alm:descriptor:label:en:Pruner Image Tag'
+      - 'urn:alm:descriptor:label:zh:Pruner 镜像版本'
+      - 'urn:alm:descriptor:description:en:Pruner image tag'
+      - 'urn:alm:descriptor:description:zh:Pruner 镜像版本'
+  - path: global.images.pruner.pullPolicy
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:Always'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:Never'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:IfNotPresent'
+      - 'urn:alm:descriptor:com.tectonic.default:IfNotPresent'
+      - 'urn:alm:descriptor:label:en:Pruner Image Pull Policy'
+      - 'urn:alm:descriptor:label:zh:Pruner 镜像拉取策略'
+      - 'urn:alm:descriptor:description:en:Pruner image pull policy'
+      - 'urn:alm:descriptor:description:zh:Pruner 镜像拉取策略'
+  - path: global.images.registry.repository
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:ait/registry'
+      - 'urn:alm:descriptor:label:en:Registry Image Repository'
+      - 'urn:alm:descriptor:label:zh:Registry 镜像名称'
+      - 'urn:alm:descriptor:description:en:Registry image repository'
+      - 'urn:alm:descriptor:description:zh:Registry 镜像名称'
+  - path: global.images.registry.tag
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:v2.7.1-alauda.6'
+      - 'urn:alm:descriptor:label:en:Registry Image Tag'
+      - 'urn:alm:descriptor:label:zh:Registry 镜像版本'
+      - 'urn:alm:descriptor:description:en:Registry image tag'
+      - 'urn:alm:descriptor:description:zh:Registry 镜像版本'
+  - path: global.images.registry.pullPolicy
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:Always'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:Never'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:IfNotPresent'
+      - 'urn:alm:descriptor:com.tectonic.default:IfNotPresent'
+      - 'urn:alm:descriptor:label:en:Registry Image Pull Policy'
+      - 'urn:alm:descriptor:label:zh:Registry 镜像拉取策略'
+      - 'urn:alm:descriptor:description:en:Registry image pull policy'
+      - 'urn:alm:descriptor:description:zh:Registry 镜像拉取策略'
+  - path: global.imageregistryEnabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:false'
+      - 'urn:alm:descriptor:label:en:ImageRegistry Enabled'
+      - 'urn:alm:descriptor:label:zh:是否部署ImageRegistry'
+      - 'urn:alm:descriptor:description:en:ImageRegistry Enabled'
+      - 'urn:alm:descriptor:description:zh:是否部署ImageRegistry(只支持在global集群部署)'
+  - path: basicAuth.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:true'
+      - 'urn:alm:descriptor:label:en:Basic Auth Enabled'
+      - 'urn:alm:descriptor:label:zh:Basic认证开启'
+      - 'urn:alm:descriptor:description:en:Basic auth enabled'
+      - 'urn:alm:descriptor:description:zh:是否开启Basic认证'
+  - path: basicAuth.htpasswd
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:widgets:htpasswd'
+      - 'urn:alm:descriptor:com.tectonic.default:admin:$2a$10$0LIz/ITHAyIphVGvF0x7MergGrHvkkyLFxCbZQgEg2ymoHJZlPX86'
+      - 'urn:alm:descriptor:com.tectonic.ui:validation:required'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:basicAuth.enabled:true'
+      - 'urn:alm:descriptor:username:label:en:Basic auth username'
+      - 'urn:alm:descriptor:username:label:zh:Basic 认证用户名'
+      - 'urn:alm:descriptor:password:label:en:Basic auth password'
+      - 'urn:alm:descriptor:password:label:zh:Basic 认证密码'
+  - path: registry.host
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:127.0.0.1'
+      - 'urn:alm:descriptor:label:en:Registry Host'
+      - 'urn:alm:descriptor:label:zh:主机地址'
+      - 'urn:alm:descriptor:description:en:Registry host address which can be accessed by nodeport'
+      - 'urn:alm:descriptor:description:zh:指定一个可以访问到Registry Nodeport的主机地址'
+  - path: registry.gcPeriod
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+      - 'urn:alm:descriptor:com.tectonic.default:604800'
+      - 'urn:alm:descriptor:label:en:GC Period(unit:s)'
+      - 'urn:alm:descriptor:label:zh:GC 间隔时间(单位:秒)'
+      - 'urn:alm:descriptor:description:en:Registry GC Period(unit:s)'
+      - 'urn:alm:descriptor:description:zh:Registry GC 间隔时间(单位:秒)'
+  - path: service.type
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:ClusterIP'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:ExternalName'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:NodePort'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:LoadBalancer'
+      - 'urn:alm:descriptor:com.tectonic.default:NodePort'
+      - 'urn:alm:descriptor:label:en:Service Type'
+      - 'urn:alm:descriptor:label:zh:内部路由类型'
+      - 'urn:alm:descriptor:description:en:Service type'
+      - 'urn:alm:descriptor:description:zh:内部路由类型'
+  - path: service.port
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+      - 'urn:alm:descriptor:com.tectonic.default:5000'
+      - 'urn:alm:descriptor:label:en:Service External Port'
+      - 'urn:alm:descriptor:label:zh:内部路由对外端口'
+      - 'urn:alm:descriptor:description:en:Service external port'
+      - 'urn:alm:descriptor:description:zh:内部路由对外端口'
+  - path: service.nodePort
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:basicConfiguration'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+      - 'urn:alm:descriptor:com.tectonic.default:30011'
+      - 'urn:alm:descriptor:label:en:Service NodePort'
+      - 'urn:alm:descriptor:label:zh:内部路由主机端口'
+      - 'urn:alm:descriptor:description:en:Service nodeport'
+      - 'urn:alm:descriptor:description:zh:内部路由主机端口'
+  - path: ingress.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Ingress'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:false'
+      - 'urn:alm:descriptor:label:en:Ingress Enabled'
+      - 'urn:alm:descriptor:label:zh:Ingress 开启'
+      - 'urn:alm:descriptor:description:en:Ingress enabled switch'
+      - 'urn:alm:descriptor:description:zh:Ingress 是否开启'
+  - path: ingress.path
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Ingress'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:/'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:ingress.enabled:true'
+      - 'urn:alm:descriptor:label:en:Ingress Path'
+      - 'urn:alm:descriptor:label:zh:Ingress Path'
+      - 'urn:alm:descriptor:description:en:Ingress path'
+      - 'urn:alm:descriptor:description:zh:Ingress path'
+  - path: ingress.hosts[0]
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Ingress'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:chart-registry.local'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:ingress.enabled:true'
+      - 'urn:alm:descriptor:label:en:Ingress Host'
+      - 'urn:alm:descriptor:label:zh:Ingress Host'
+      - 'urn:alm:descriptor:description:en:Ingress host[0] address'
+      - 'urn:alm:descriptor:description:zh:Ingress 第一个host地址'
+  # add for s3
+  - path: s3storage.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:false'
+      - 'urn:alm:descriptor:label:en:S3 Storage Enabled'
+      - 'urn:alm:descriptor:label:zh:S3存储 开启'
+      - 'urn:alm:descriptor:description:en:S3 storage enabled switch'
+      - 'urn:alm:descriptor:description:zh:S3存储是否开启'
+  - path: s3storage.env.REGISTRY_STORAGE_S3_REGIONENDPOINT
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:s3storage.enabled:true'
+      - 'urn:alm:descriptor:label:en:Endpoint'
+      - 'urn:alm:descriptor:label:zh:端点(endpoint)'
+      - 'urn:alm:descriptor:description:en:S3 endpoint'
+      - 'urn:alm:descriptor:description:zh:S3存储端点'
+  - path: s3storage.env.REGISTRY_STORAGE_S3_BUCKET
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:s3storage.enabled:true'
+      - 'urn:alm:descriptor:label:en:S3 bucket'
+      - 'urn:alm:descriptor:label:zh:S3存储桶(bucket)'
+      - 'urn:alm:descriptor:description:en:S3 bucket'
+      - 'urn:alm:descriptor:description:zh:S3存储桶名称'
+  - path: s3storage.secretName
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:s3storage.enabled:true'
+      - 'urn:alm:descriptor:label:en:S3 Secret Name'
+      - 'urn:alm:descriptor:label:zh:S3 Secret 名称'
+      - 'urn:alm:descriptor:description:en:S3 secret name'
+      - 'urn:alm:descriptor:description:zh:S3 secret名称, 通过对该字段设置当前namasepace下的secret名称来配置访问S3的认证信息'
+  # end for s3
+  - path: persistence.enabled
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:booleanSwitch'
+      - 'urn:alm:descriptor:com.tectonic.default:false'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:s3storage.enabled:false'
+      - 'urn:alm:descriptor:label:en:Persistence Enabled'
+      - 'urn:alm:descriptor:label:zh:Persistence 开启'
+      - 'urn:alm:descriptor:description:en:Persistence enabled switch'
+      - 'urn:alm:descriptor:description:zh:持久化是否开启'
+  - path: persistence.accessMode
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:ReadWriteOnce'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:ReadOnlyMany'
+      - 'urn:alm:descriptor:com.tectonic.ui:select:ReadWriteMany'
+      - 'urn:alm:descriptor:com.tectonic.default:ReadWriteOnce'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.enabled:true'
+      - 'urn:alm:descriptor:label:en:Persistence AccessMode'
+      - 'urn:alm:descriptor:label:zh:持久化访问模式'
+      - 'urn:alm:descriptor:description:en:Persistence accessMode'
+      - 'urn:alm:descriptor:description:zh:持久化访问模式'
+  - path: persistence.size
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:10Gi'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.enabled:true'
+      - 'urn:alm:descriptor:label:en:Persistence Size'
+      - 'urn:alm:descriptor:label:zh:持久化存储大小'
+      - 'urn:alm:descriptor:description:en:Persistence size'
+      - 'urn:alm:descriptor:description:zh:持久化存储大小'
+  - path: persistence.storageClass
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:persistence.enabled:true'
+      - 'urn:alm:descriptor:label:en:Persistence StorageClass'
+      - 'urn:alm:descriptor:label:zh:持久化存储类名称'
+      - 'urn:alm:descriptor:description:en:Persistence storageClass'
+      - 'urn:alm:descriptor:description:zh:持久化存储类名称'
+  - path: persistence.hostpath.path
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:Persistence'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - 'urn:alm:descriptor:com.tectonic.default:/cpaas/docker-registry'
+      - 'urn:alm:descriptor:com.tectonic.ui:fieldDependency:s3storage.enabled:false'
+      - 'urn:alm:descriptor:label:en:Persistence Hostpath'
+      - 'urn:alm:descriptor:label:zh:本地存储目录'
+      - 'urn:alm:descriptor:description:en:Persistence hostpath'
+      - 'urn:alm:descriptor:description:zh:持久化存储Hostpath'

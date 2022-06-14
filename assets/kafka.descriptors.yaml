@@ -5,6 +5,7 @@ specDescriptors:
     x-descriptors:
       - urn:alm:descriptor:com.tectonic.ui:text
       - urn:alm:descriptor:com.tectonic.default:0.0.1
+      - urn:alm:descriptor:com.tectonic.ui:validation:required
   - description: The desired number of Kafka brokers.
     displayName: Kafka Brokers
     path: kafka.replicas
@@ -34,31 +35,7 @@ specDescriptors:
     path: kafka.resources
     x-descriptors:
       - urn:alm:descriptor:com.tectonic.ui:resourceRequirements
-  - path: 'info'
-    x-descriptors:
-      - 'urn:alm:descriptor:label:zh:信息'
-      - 'urn:alm:descriptor:label:en:Info'
-  - path: 'info[0].name'
-    displayName: Name
-    description: 'Test info array value'
-    x-descriptors:
-      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
-      - 'urn:alm:descriptor:com.tectonic.ui:textarea'
-      - urn:alm:descriptor:com.tectonic.default:testName
-      - 'urn:alm:descriptor:label:en:Name'
-      - 'urn:alm:descriptor:label:zh:名称'
-      - 'urn:alm:descriptor:description:en:'
-      - 'urn:alm:descriptor:description:zh:'
-  - path: 'info[0].value'
-    displayName: Value
-    description: 'Test info array value'
-    x-descriptors:
-      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
-      - 'urn:alm:descriptor:com.tectonic.ui:text'
-      - 'urn:alm:descriptor:label:en:Value'
-      - 'urn:alm:descriptor:label:zh:值'
-      - 'urn:alm:descriptor:description:en:'
-      - 'urn:alm:descriptor:description:zh:'
+
   - description: The desired number of Zookeeper nodes.
     displayName: Zookeeper Nodes
     path: zookeeper.replicas
@@ -87,3 +64,41 @@ specDescriptors:
       - urn:alm:descriptor:com.tectonic.ui:yaml
       - 'urn:alm:descriptor:label:en:Zookeeper Resource Requirements with yaml editor'
       - 'urn:alm:descriptor:label:zh:Zookeeper 配额yaml编辑框'
+  - path: 'info'
+    x-descriptors:
+      - 'urn:alm:descriptor:label:zh:端口信息'
+      - 'urn:alm:descriptor:label:en:Info'
+  - path: 'info[0].name'
+    displayName: Name
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
+      - 'urn:alm:descriptor:com.tectonic.ui:text'
+      - urn:alm:descriptor:com.tectonic.default:testName
+      - 'urn:alm:descriptor:label:en:Name'
+      - 'urn:alm:descriptor:label:zh:名称'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+      - 'urn:alm:descriptor:com.tectonic.ui:validation:required'
+  - path: 'info[0].value'
+    displayName: Value
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
+      - urn:alm:descriptor:com.tectonic.ui:select:ephemeral
+      - urn:alm:descriptor:com.tectonic.ui:select:persistent-claim
+      - urn:alm:descriptor:com.tectonic.ui:select:jbod
+      - 'urn:alm:descriptor:label:en:Value'
+      - 'urn:alm:descriptor:label:zh:端口'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'info[0].password'
+    displayName: Value
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:info'
+      - 'urn:alm:descriptor:com.tectonic.ui:password'
+      - 'urn:alm:descriptor:label:en:Value'
+      - 'urn:alm:descriptor:label:zh:密码'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'

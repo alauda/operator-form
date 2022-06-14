@@ -1,0 +1,11 @@
+apiVersion: operator.devops.alauda.io/v1alpha1
+kind: Harbor
+metadata:
+  name: harbor-sample
+  namespace: operators
+  labels: {}
+  annotations:
+    cpaas.io/display-name: ''
+spec:
+  account:
+    passwordRef: liudong-test4

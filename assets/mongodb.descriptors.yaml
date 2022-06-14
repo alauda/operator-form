@@ -76,7 +76,7 @@ specDescriptors:
       - 'urn:alm:descriptor:com.tectonic.ui:fieldGroup:secrets'
       - 'urn:alm:descriptor:com.tectonic.ui:text'
       - 'urn:alm:descriptor:label:en:Secret Name for Certification'
-      - 'urn:alm:descriptor:description:en:The secret name for the MongoDB Internal Auth Key. This secret is auto-created by the operator if it doesn’t exist.'
+      - "urn:alm:descriptor:description:en:The secret name for the MongoDB Internal Auth Key. This secret is auto-created by the operator if it doesn't exist."
       - 'urn:alm:descriptor:description:zh:保密字典类型的MongDB访问密码，可以为空，如果为空，则会自动生成'
   - path: mongodbExporter
     x-descriptors:

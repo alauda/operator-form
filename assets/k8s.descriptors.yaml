@@ -1,0 +1,15 @@
+specDescriptors:
+  - description: passwordRef
+    displayName: passwordRef
+    path: account.passwordRef
+    x-descriptors:
+      - urn:alm:descriptor:com.tectonic.ui:validation:required
+      - urn:alm:descriptor:com.tectonic.ui:basicAuthSecret:{"secretName":"liudong-test","usernameKey":"usrname","usernameDefault":"liudong","usernameReadonly":false,"passwordKey":"pwd","strongPassword":true}
+      - 'urn:alm:descriptor:description:en:Secret Name'
+      - 'urn:alm:descriptor:description:zh:存储信息的保密字典名称'
+      - urn:alm:descriptor:com.tectonic.ui:fieldGroup:account
+  - description: password
+    displayName: password
+    path: account.password
+    x-descriptors:
+      - urn:alm:descriptor:io.kubernetes:Secret

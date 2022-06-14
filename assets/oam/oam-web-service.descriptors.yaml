@@ -1,0 +1,51 @@
+specDescriptors:
+  - path: 'imageSelector'
+    x-descriptors:
+      - 'urn:alm:descriptor:widgets:oam:image-select'
+      - 'urn:alm:descriptor:label:zh:镜像选择标签'
+      - 'urn:alm:descriptor:label:en:image-select'
+  - path: 'config'
+    x-descriptors:
+      - 'urn:alm:descriptor:widgets:oam:oam-resource-list'
+      - 'urn:alm:descriptor:label:zh:oam资源标签'
+      - 'urn:alm:descriptor:label:en:app-resource'
+  - path: 'ports'
+    x-descriptors:
+      - 'urn:alm:descriptor:label:zh:网络访问标签'
+      - 'urn:alm:descriptor:label:en:service'
+      - 'urn:alm:descriptor:com.tectonic.ui:array'
+      - 'urn:alm:descriptor:widgets:common:arrayTable'
+  - path: 'ports[0].protocol'
+    displayName: protocol
+    description: 'Test info array value'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:ports'
+      - urn:alm:descriptor:com.tectonic.ui:select:tcp
+      - urn:alm:descriptor:com.tectonic.ui:select:udp
+      - urn:alm:descriptor:com.tectonic.ui:select:http
+      - urn:alm:descriptor:com.tectonic.ui:select:https
+      - 'urn:alm:descriptor:label:en:protocol'
+      - 'urn:alm:descriptor:label:zh:协议'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'ports[0].port'
+    displayName: port
+    description: 'port'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:ports'
+      - 'urn:alm:descriptor:com.tectonic.ui:number'
+      - 'urn:alm:descriptor:label:en:port'
+      - 'urn:alm:descriptor:label:zh:端口'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
+  - path: 'ports[0].type'
+    displayName: type
+    description: 'type'
+    x-descriptors:
+      - 'urn:alm:descriptor:com.tectonic.ui:arrayFieldGroup:ports'
+      - urn:alm:descriptor:com.tectonic.ui:select:internal
+      - urn:alm:descriptor:com.tectonic.ui:select:external
+      - 'urn:alm:descriptor:label:en:type'
+      - 'urn:alm:descriptor:label:zh:端口类型'
+      - 'urn:alm:descriptor:description:en:'
+      - 'urn:alm:descriptor:description:zh:'
